@@ -8,9 +8,8 @@ img{
 width: 100%;
 height: 100%;
 }
-
-body {
-  font-family: Arial, sans-serif;
+a{
+  text-decoration: none;
 }
 
 .container {
@@ -95,9 +94,7 @@ body {
 
 /* RESPONSIVE  Navbar*/
 @media (min-width: 768px) {
-  body,html{
-    overflow-x: hidden;
-  }
+
   .mynavbar {
     flex-wrap: nowrap;
   }
@@ -320,4 +317,83 @@ body {
   }
 }
 
-
+#footer_area{
+  margin-top: 100px;
+  background-color: #F7F7F9;
+}
+.snobella{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.snobella .div h2{
+  margin-top: 40px;
+  font-size: 40px;
+}
+.srchInput{
+  position: relative;
+  margin-top: 40px;
+}
+.srchInput input{
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  width: 500px;
+  border: 1px solid gray;
+  height: 44px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.srchInput label{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.srchInput label i{
+  font-size: 20px;
+}
+.bottom{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.footer-left{
+  width: 330px;
+}
+.footer-left p{
+  text-align: justify;
+  line-height: 150%;
+}
+.footer-left i{
+  font-size: 20px;
+  margin-top: 10px;
+}
+.footer-left span{
+  margin-left: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bottom a{
+  color: #212121BF;
+}
+@media screen and (max-width:576px){
+  .srchInput input{
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    width: 400px;
+    border: 1px solid gray;
+    height: 44px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .srchInput label{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded",async()=>{
     let products= (await axios("http://localhost:3000/products")).data
+
     console.log(products);
-let cards=document.querySelector(".cards")
-    function createCard() {
-        products.forEach(product => {
+
+    let cards=document.querySelector(".cards")
+
+
+    function createCard(filteredProducts) {
+        filteredProducts.forEach(product => {
             let card=document.createElement("div")
             card.classList.add("card")
 
@@ -67,5 +71,46 @@ let cards=document.querySelector(".cards")
 
         });
     }
-    createCard()
+
+    let filteredProducts=[...products]
+     
+//filter section
+
+    let sortByAZ = document.querySelector(".az");
+    sortByAZ.addEventListener("click", (e) => {
+    e.preventDefault();
+    filteredProducts = products.sort((a, b) => a.title.localeCompare(b.title));
+    cards.innerHTML = "";
+    createCard(filteredProducts);
+});
+
+let sortByZA = document.querySelector(".za");
+sortByZA.addEventListener("click", (e) => {
+  e.preventDefault();
+  filteredProducts = products.sort((a, b) => b.title.localeCompare(a.title));
+  cards.innerHTML = "";
+  createCard(filteredProducts);
+});
+
+let priceLow=document.querySelector(".low")
+priceLow.addEventListener("click",(e)=>{
+    e.preventDefault()
+      filteredProducts=products.sort((a,b)=>b.price-a.price)
+      cards.innerHTML=""
+      createCard(filteredProducts)
+})
+
+let priceHigh=document.querySelector(".high")
+priceHigh.addEventListener("click", (e)=>{
+      e.preventDefault()
+      filteredProducts=products.sort((a,b)=>a.price-b.price)
+      cards.innerHTML=""
+      createCard(filteredProducts)
+})
+
+
+
+
+
+    createCard(filteredProducts)
 })

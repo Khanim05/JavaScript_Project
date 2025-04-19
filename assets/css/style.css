@@ -1,88 +1,108 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    max-width: 80%;
-    margin: auto;
-    margin-top: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
 }
 
-.container .mynavbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    margin-bottom: 50px;
-    position: relative;
+.mynavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px 0;
 }
 
-.mynavbar .logo {
-    font-size: 30px;
-    font-weight: bold;
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.mynavbar .nav_list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin: 0;
-}
-
-.nav_list .nav_list-item {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.mynavbar .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.mynavbar .wrapper a i {
-    margin-right: 2px;
-    font-size: 20px;
-}
-
-.mynavbar .wrapper .username {
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    background: #f1f1f1;
-}
-
-.mynavbar .wrapper a sup {
-    color: red;
-    font-size:15px;
-    font-weight: bold;
-}
-
-.searchTxt{
-    background-color: rgb(252, 250, 250);
-    border: none;
-    padding: 21px;
-    width: 504px;
-    height: 40px;
-    border-radius: 8px;
-    
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
 .searchBtn{
-    position: relative;
+  position: relative;
+  flex: 1 1 100%;
+  max-width: 500px;
 }
-.searchLabel{
-     position: absolute;
-     top: 10px;
-     right: 5px;
+
+.searchTxt {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.search{
-     font-size: 20px;
-    color: rgb(56, 56, 56);
+
+.searchLabel {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.search {
+  font-size: 18px;
+  color: #333;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.wrapper a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+.wrapper a i {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.wrapper a sup {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.username {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+/* RESPONSIVE  Navbar*/
+@media (min-width: 768px) {
+  body,html{
+    overflow-x: hidden;
+  }
+  .mynavbar {
+    flex-wrap: nowrap;
+  }
+
+  .searchBtn {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .wrapper {
+    justify-content:flex-end;
+}
 }

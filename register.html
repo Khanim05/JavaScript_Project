@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Account</title>
+  <link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+/>
+  <link rel="stylesheet" href="assets/css/register.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <p class="subtitle">Excepteur sint occaecat cupidatat mollit</p>
+
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I have read and agree to the terms of use.</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Continue</button>
+
+      <p class="signin-text">Already have an account? <a href="login.html">Sign in</a></p>
+    </form>
+  </div>
+  <script
+       type="text/javascript"
+       src="https://cdn.jsdelivr.net/npm/toastify-js"
+     ></script>
+  <script src="assets/js/register.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+</body>
+</html>

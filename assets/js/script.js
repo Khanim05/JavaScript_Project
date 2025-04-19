@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
     let filteredProducts=[...products]
      
-//filter section
+//filter section sort
 
     let sortByAZ = document.querySelector(".az");
     sortByAZ.addEventListener("click", (e) => {
@@ -91,7 +91,8 @@ sortByZA.addEventListener("click", (e) => {
   cards.innerHTML = "";
   createCard(filteredProducts);
 });
-
+ 
+//filter section price
 let priceLow=document.querySelector(".low")
 priceLow.addEventListener("click",(e)=>{
     e.preventDefault()
@@ -109,8 +110,59 @@ priceHigh.addEventListener("click", (e)=>{
 })
 
 
+//filter section search
 
+let searchText=document.querySelector(".searchTxt")
+let searchIcon=document.querySelector(".search")
 
+searchIcon.addEventListener("click", searchProduct)
+searchText.addEventListener("keyup", searchProduct)
 
+function searchProduct(e) {
+         e.preventDefault()
+    let searchvalue=searchText.value
+    console.log(searchvalue)
+    filteredProducts=products.filter((product)=>product.title.toLowerCase().includes(searchvalue.trim().toLowerCase()))
+    cards.innerHTML=""
     createCard(filteredProducts)
+}
+
+// search footer 
+ let footerInput=document.querySelector(".searchTxtFooter")
+ let footerIcon=document.querySelector(".searchFooter")
+ footerIcon.addEventListener("click", searchProductFooter)
+ footerInput.addEventListener("keyup", searchProductFooter)
+
+ function searchProductFooter(e) {
+    e.preventDefault()
+   let footerValue=footerInput.value
+   filteredProducts=products.filter((product)=>product.title.toLowerCase().includes(footerValue.trim().toLowerCase()))
+   cards.innerHTML=""
+   createCard(filteredProducts)
+ }
+
+ let wishlistIcon=document.querySelector(".wishlistIcon")
+
+
+
+
+
+
+ 
+    createCard(filteredProducts)
+    let toast=(text)=>{
+        Toastify({
+            text: `${text}`,
+            duration:3000,
+            position:"right",
+            stopOnFocus: true,
+            style:{
+                background:"linear-gradient(to right, #d93025, #e57373)",
+                color: "white",
+                borderRadius:"6px",
+                boxShadow:"0 4px 8px rgba(0,0,0,0.1)"
+            },
+            onClick:function () {} //Calback after click  
+        }).showToast()
+    }
 })

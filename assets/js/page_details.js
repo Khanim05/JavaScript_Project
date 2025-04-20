@@ -1,5 +1,5 @@
 let url = new URLSearchParams(location.search);
-let id = Number(url.get("id"));
+let id = (url.get("id"));
 console.log(id)
 
 async function products(e) {
@@ -330,4 +330,3 @@ let toast=(text)=>{
     }).showToast()
 }
 products()
- 

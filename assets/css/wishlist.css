@@ -159,3 +159,271 @@
       justify-content:flex-end;
   }
   }
+
+  #main_area span i{
+    font-size: 10px;
+  }
+  #main_area .shoulderBags{
+    opacity: 0.8;
+    margin-left: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  /* Left */
+  .wishlist {
+    display: flex;
+    gap: 20px; 
+    align-items: flex-start; 
+  }
+  
+
+  .wish {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .cards {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 100px;
+  }
+
+  
+  
+
+  .left img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bbbbbb;
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+  }
+  
+  .left-img {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .left-bottom p i {
+    padding-left: 10px;
+  }
+  
+
+.card-img{
+  width: 218px;
+  height: 134px;
+  margin-left: 50px;
+}
+.card{
+  margin-top: 20px;
+  width: 360px;
+  height: 470px;
+  border-radius: 8px;
+  position: relative;
+  background: #F9F9F9;
+}
+.card-image{
+  margin-top: 100px;
+}
+.card-heart{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  color: red;
+}
+.card-heart:hover{
+  color: #ff9812;
+  cursor: pointer;
+}
+
+.card-sale{
+  text-align: center;
+  padding: 3px;
+  width: 79px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #43D167;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.card-content{
+  margin-left: 20px;
+}
+.card-star{
+  color: #FFDD45;
+  margin-top: 10px;
+  line-height: 170%;
+}
+.card-title{
+  margin-top: 10px;
+  width: 302px;
+  line-height: 170%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card-content .price{
+  font-size: 20px;
+  color: #DF4244;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.saleSpan{
+  line-height: 170%;
+  margin-left: 15px;
+  color: #363636BF;
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#product_area{
+  margin-top: 50px;
+}
+#product_area h5{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.cardFooter{
+  width: 312px;
+  height: 48px;
+  background: transparent;
+}
+.addBtn{
+  margin-left: 20px;
+  margin-top: 15px;
+  width: 320px;
+  height: 48px;
+  background: transparent;
+  border-radius:8px;
+  border: 1px solid black;
+  font-size: 17px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.cardFooter .addBtn:hover{
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width:992px){
+  .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:768px){
+  .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wishlist {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:576px){
+  .cards{
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#footer_area{
+  margin-top: 100px;
+  background-color: #F7F7F9;
+}
+.snobella{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.snobella .div h2{
+  margin-top: 40px;
+  font-size: 40px;
+}
+.srchInput{
+  position: relative;
+  margin-top: 40px;
+}
+.srchInput input{
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  width: 500px;
+  border: 1px solid gray;
+  height: 44px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.srchInput label{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.srchInput label i{
+  font-size: 20px;
+}
+.bottom{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.footer-left{
+  width: 330px;
+}
+.footer-left p{
+  text-align: justify;
+  line-height: 150%;
+}
+.footer-left i{
+  font-size: 20px;
+  margin-top: 10px;
+}
+.footer-left span{
+  margin-left: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bottom a{
+  color: #212121BF;
+}
+@media screen and (max-width:576px){
+  .srchInput input{
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    width: 400px;
+    border: 1px solid gray;
+    height: 44px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .srchInput label{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+

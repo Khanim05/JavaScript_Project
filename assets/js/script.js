@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
             let card=document.createElement("div")
             card.classList.add("card")
             card.addEventListener("click", () => {
-                window.location.href = `page_detail.html?id=${product.id}`;
+                window.location.href = `product-details.html?id=${product.id}`;
               });
 
             let cardImage=document.createElement("div")

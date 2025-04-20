@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded",async()=>{
+
+    
     let products= (await axios.get("http://localhost:3000/products")).data
 
     console.log(products);
+    // basketCount()
      
     let users=JSON.parse(localStorage.getItem("users")) || []
     let register=document.querySelector(".register")
@@ -260,13 +263,14 @@ function UserBasket(productID) {
 //Basket count
 function basketCount() {
     if (loginedUser) {
-    let result=loginedUser.basket.reduce((acc,product)=>acc+product.count,0)
-
-    let basketIcon=document.querySelector(".basketIcon sup")
-    basketIcon.textContent=result
+        let result = loginedUser.basket.reduce((acc, product) => acc + (product.count || 0), 0);
+        let basketIcon = document.querySelector(".basketIcon sup");
+        if (basketIcon) {
+            basketIcon.textContent = result;
+        }
     }
-
 }
+
 basketCount()
 
 

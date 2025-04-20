@@ -280,7 +280,7 @@ basketCount()
     let toast=(text)=>{
         Toastify({
             text: `${text}`,
-            duration:3000,
+            duration:1000,
             position:"right",
             stopOnFocus: true,
             style:{

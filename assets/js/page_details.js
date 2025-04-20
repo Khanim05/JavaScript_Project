@@ -14,6 +14,42 @@ async function products(e) {
             return;
         }
 
+        let users=JSON.parse(localStorage.getItem("users")) || []
+        let loginedUser=users.find((item)=>item.isLogined==true)
+        let loginedUserindex=loginedUser ? users.findIndex((user)=>user.id===loginedUser.id) : -1
+
+        let login=document.querySelector(".login")
+        let logout=document.querySelector(".logout")
+        let register=document.querySelector(".register")
+        let btnusername=document.querySelector(".username")
+
+       if (!loginedUser) {
+    register.classList.remove("d-none")
+    login.classList.remove("d-none")
+    logout.classList.add("d-none")
+     }
+    else{
+    register.classList.add("d-none")
+    login.classList.add("d-none")
+    logout.classList.remove("d-none")
+    btnusername.classList.remove("d-none")
+    btnusername.textContent=loginedUser.username
+ }
+
+
+    logout.addEventListener("click", logoutUser)
+
+    function logoutUser(e) {
+    e.preventDefault()
+    loginedUser.isLogined=false
+    localStorage.setItem("users",JSON.stringify(users))
+    toast("Logout account")
+    setTimeout(() => {
+        window.location.reload()
+    }, 2000);
+    return
+}
+
         let topArea = document.querySelector(".top_area");
         let leftArea = document.querySelector(".left");
         let cards = document.querySelector(".cards");
@@ -56,6 +92,43 @@ async function products(e) {
 
         let cardHeart = document.createElement('i');
         cardHeart.classList.add('fa-regular', 'fa-heart', 'card-heart');
+        if (loginedUser && loginedUser.wishlist.some(item => item.id === id)) {
+            cardHeart.classList.remove("fa-regular");
+            cardHeart.classList.add("fa-solid");
+          }
+        cardHeart.addEventListener("click", (e)=>{
+            e.stopPropagation()
+            addUserWishlist(findProd,cardHeart)
+        })
+
+        function addUserWishlist(product, HeardIcon) {
+            if (!loginedUser) {
+                toast("Login to add product to wishlist")
+                setTimeout(() => {
+                    window.location.href = "login.html"
+                }, 2000);
+                return;
+            }
+        
+            let existingIndex = loginedUser.wishlist.findIndex((item) => item.id === product.id);
+        
+            if (existingIndex !== -1) {
+                
+                loginedUser.wishlist.splice(existingIndex, 1);
+                HeardIcon.classList.add("fa-regular");
+                HeardIcon.classList.remove("fa-solid");
+                toast("Product removed from wishlist.");
+            } else {
+               
+                loginedUser.wishlist.push(product);
+                HeardIcon.classList.remove("fa-regular");
+                HeardIcon.classList.add("fa-solid");
+                toast("Product added to wishlist.");
+            }
+        
+            users[loginedUserindex].wishlist = loginedUser.wishlist;
+            localStorage.setItem("users", JSON.stringify(users));
+        }
 
         let cardImg = document.createElement('img');
         cardImg.src = findProd.image;
@@ -177,9 +250,6 @@ async function products(e) {
             AddBasket(findProd)
         })
 
-        let users=JSON.parse(localStorage.getItem("users")) || []
-        let loginedUser=users.find((item)=>item.isLogined==true)
-        let loginedUserindex=loginedUser ? users.findIndex((user)=>user.id===loginedUser.id) : -1
        
  function AddBasket(product) {
     if (!loginedUser) {

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stobella</title>
+    <link rel="stylesheet" href="assets/css/basket.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+    />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+  />
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <section id="nav_area">
+        <div class="container">
+          <nav class="mynavbar">
+            <div class="logo">Snobella</div>
+      
+            <div class="searchBtn">
+              <input
+                type="text"
+                class="searchTxt"
+                placeholder="Search all products"
+                id="icon"
+              />
+              <label class="searchLabel" for="icon">
+                <i class="fa-solid fa-magnifying-glass search"></i>
+              </label>
+            </div>
+      
+            <div class="wrapper">
+              <button class="username d-none">Username</button>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <i class="fa-solid fa-user"></i>
+                  Sign up
+                </button>
+                <div class="dropdown-content">
+                  <a href="register.html" class="register">Register</a>
+                  <a href="login.html" class="login">Login</a>
+                  <a href="index.html" class="logout">Logout</a>
+                </div>
+              </div>
+              <a href="wishlist.html">
+                <i class="fa-regular fa-heart wishlistIcon"></i>
+                Wishlist
+              </a>
+              <a href="basket.html" class="basketIcon">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <sup>0</sup>
+                Basket
+              </a>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <main>
+        <section class="basket-container">
+          <div class="container">
+            <p class="favori">
+              <a href="index.html">Home </a
+              ><i class="fa fa-chevron-right"></i> Shopping bag
+            </p>
+            <h3>Shopping bag</h3>
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+                <div class="basket">
+   
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <div class="totalBtn">
+                  <div class="total-area">
+                    <p class="d-flex">
+                      <span>Your Subtotal</span>
+                      <span class="totalPriceEnd">20.60</span>
+                    </p>
+                    <p class="d-flex">
+                      <span>Shipping changes</span>
+                      <span>Free</span>
+                    </p>
+                    <div class="bottom">
+                      <h4>Total:</h4>
+                      <span class="total-price">0</span>
+                    </div>
+                    <hr style="border-style: dashed" />
+                    <div class="promo-wrapper">
+                      <input
+                        class="prome"
+                        type="text"
+                        placeholder="Discount promo code"
+                      />
+                      <button>Apply</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="add-cart">
+                  <button class="confirm-card">Confirm cart</button>
+                  <button class="cash">Cash payment</button>
+                </div>
+              </div>
+              <button id="deleteAll" class="btn btn-danger deleteAllBtn">
+                Delete All
+              </button>
+            </div>
+          </div>
+        </section>
+  </main>
+
+  <section id="footer_area">
+    <div class="container">
+      <div class="snobella">
+        <div class="div"><h2>Snobella</h2></div>
+        <div class="srchInput">
+          <input type="text" placeholder="Search all products" id="srchinput" class="searchTxtFooter">
+          <label for="srchinput"><i class="fa-solid fa-magnifying-glass searchFooter"></i></label>
+        </div>
+
+    </div>
+    <hr>
+    <div class="bottom">
+      <div class="footer-left">
+        <p>The wise man therefore always holds selectionThe wise 
+          man therefore always rejects
+           pleasures to secure other greater</p>
+           <div class="email">
+            <i class="fa-solid fa-envelope">
+          </i><span>Snobella@gmail.com</span>
+        </div>
+           <div class="telephone">
+            <i class="fa-solid fa-phone"></i> <span>+748 383 23 14</span>
+          </div>
+           <div class="message">
+            <i class="fa-brands fa-telegram"></i> <span>Send message</span>
+           </div>
+
+      </div>
+      <div class="footer-right1">
+        <h4>Shop</h4>
+        <p><a href="">Shoulder Bag</a></p>
+        <p><a href="">Backpack</a></p>
+        <p><a href="">Tote Bag</a></p>
+        <p><a href="">Hand Bag</a></p>
+        <p><a href="">Evening bags</a></p>
+        <p><a href="">Purse</a></p>
+      </div>
+      <div class="footer-right2">
+        <h4>Company</h4>
+        <p><a href="">About us</a></p>
+        <p><a href="">Contact</a></p>
+        <p><a href="">Terms of Use</a></p>
+        <p><a href="">Customer service</a></p>
+      </div>
+      <div class="footer-right3">
+        <h4>Help</h4>
+        <p><a href="">FAQ</a></p>
+        <p><a href="">Delivery</a></p>
+        <p><a href="">Cancellation of the order</a></p>
+        <p><a href="">Don't go back</a></p>
+      </div>
+    </div>
+    
+    </div>
+    </section>
+  <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/toastify-js"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/basket.js"></script>
+
+</body>
+</html>

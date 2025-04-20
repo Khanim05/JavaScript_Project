@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  img{
+  width: 100%;
+  height: 100%;
+  }
+  a{
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  
+  .mynavbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .searchBtn{
+    position: relative;
+    flex: 1 1 100%;
+    max-width: 500px;
+  }
+  
+  .searchTxt {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .searchLabel {
+    position: absolute;
+    top: 22px;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .search {
+    font-size: 18px;
+    color: #333;
+  }
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .dropbtn i {
+    font-size: 18px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: -5px;
+    margin-left: -30px;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 8px 0;
+  }
+  
+  .dropdown-content a {
+    margin-left: -10px;
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    margin-left: 1px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display:block;
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .wrapper a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+  }
+  
+  .wrapper a i {
+    margin-right: 5px;
+    font-size: 18px;
+  }
+  
+  .wrapper a sup {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .username {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: #f1f1f1;
+  }
+  
+  /* RESPONSIVE  Navbar*/
+  @media (min-width: 768px) {
+  
+    .mynavbar {
+      flex-wrap: nowrap;
+    }
+  
+    .searchBtn {
+      flex: 1;
+      max-width: 400px;
+    }
+  
+    .wrapper {
+      justify-content:flex-end;
+  }
+  }

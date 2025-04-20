@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",async()=>{
-    let products= (await axios("http://localhost:3000/products")).data
+    let products= (await axios.get("http://localhost:3000/products")).data
 
     console.log(products);
      
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
 
     let loginedUser=users.find((user)=>user.isLogined==true)
+    let userIndex=loginedUser ? users.findIndex((user)=>user.id===loginedUser.id) : -1
 
     if (!loginedUser) {
         register.classList.remove("d-none")
@@ -26,9 +27,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
     }
 
 
-    logout.addEventListener("click", ()=>{
-        logoutUser()
-    })
+    logout.addEventListener("click", logoutUser)
 
     function logoutUser(e) {
         e.preventDefault()
@@ -38,8 +37,9 @@ document.addEventListener("DOMContentLoaded",async()=>{
         setTimeout(() => {
             window.location.reload()
         }, 2000);
+        return
     }
-    let userIndex=users.findIndex((user)=>user.id===loginedUser.id)
+    
 
     // let Userbasket=loginedUser.basket || []
     // console.log(Userbasket)
@@ -52,11 +52,15 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
     let cards=document.querySelector(".cards")
 
+    let filteredProducts=[...products]
 
     function createCard(filteredProducts) {
         filteredProducts.forEach(product => {
             let card=document.createElement("div")
             card.classList.add("card")
+            card.addEventListener("click", () => {
+                window.location.href = `page_detail.html?id=${product.id}`;
+              });
 
             let cardImage=document.createElement("div")
             cardImage.classList.add("card-image")
@@ -71,7 +75,8 @@ document.addEventListener("DOMContentLoaded",async()=>{
                 cardHeart.classList.remove("fa-regular");
                 cardHeart.classList.add("fa-solid");
               }
-            cardHeart.addEventListener("click", ()=>{
+            cardHeart.addEventListener("click", (e)=>{
+                e.stopPropagation()
                 addUserWishlist(product.id,cardHeart)
             })
 
@@ -116,7 +121,8 @@ document.addEventListener("DOMContentLoaded",async()=>{
             let addBtn=document.createElement("button")
             addBtn.classList.add("addBtn")
             addBtn.textContent="Add to card"
-            addBtn.addEventListener("click", ()=>{
+            addBtn.addEventListener("click", (e)=>{
+                e.stopPropagation()
                 UserBasket(product.id)
             })
 
@@ -129,7 +135,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
         });
     }
 
-    let filteredProducts=[...products]
      
 //filter section sort
 
@@ -254,10 +259,13 @@ function UserBasket(productID) {
 
 //Basket count
 function basketCount() {
+    if (loginedUser) {
     let result=loginedUser.basket.reduce((acc,product)=>acc+product.count,0)
 
     let basketIcon=document.querySelector(".basketIcon sup")
     basketIcon.textContent=result
+    }
+
 }
 basketCount()
 
